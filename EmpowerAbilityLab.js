@@ -29,7 +29,6 @@ function handleKeyDown(event) {
             }
             break;
 
-
         default:
             // No action for other keys
             break;
@@ -95,7 +94,6 @@ function checkIfArrowDownPressed(event) {
     }
 }
 
-
 // Detect when the focus leaves the navbar container
 function handleFocusOut(event) {
     if (!navbarnavul.contains(event.relatedTarget)) {
@@ -119,9 +117,80 @@ navbarnavul.addEventListener('focusout', handleFocusOut);
 
 
 // modal/lightbox
-modalButton = document.getElementById('modalButton');
+const modalButton = document.getElementById('modalButton');
 modalButton.addEventListener('click', modalShow);
 
+const modalClose = document.getElementById('modalClose');
+modalClose.addEventListener('click', modalCloses);
+modalClose.addEventListener('keydown', modalClosesKey);
+
+let modalCloseListener;  // Declare a variable to hold the event listener
+
 function modalShow() {
-    alert('modalShow');
+    // Show modal overlay and modal container
+    document.getElementById('customOverlay').style.display = 'block';
+    document.getElementById('customOverlay').style.opacity = '1';
+    document.getElementById('customOverlay').style.zIndex = '10';
+
+    document.getElementById('customModal_container').style.display = 'block';
+    document.getElementById('customModal_container').style.opacity = '1';
+    document.getElementById('customModal_container').style.zIndex = '11';
+
+    // Focus on the modal close button
+    modalClose.focus();
+
+    // Create the keydown event listener
+    modalCloseListener = function(event) {
+        switch (event.key) {
+            case 'Tab':
+                // Prevent focus from moving
+                event.preventDefault();
+                break;
+
+            default:
+                // Allow other keys to behave normally
+                break;
+        }
+    };
+
+    // Add keydown event listener to handle Tab key press
+    document.addEventListener('keydown', modalCloseListener);
+}
+
+function modalCloses() {
+    // Remove modal
+    document.getElementById('customOverlay').style.display = 'none';
+    document.getElementById('customOverlay').style.opacity = '0';
+    document.getElementById('customOverlay').style.zIndex = '0';
+
+    document.getElementById('customModal_container').style.display = 'none';
+    document.getElementById('customModal_container').style.opacity = '0';
+    document.getElementById('customModal_container').style.zIndex = '0';
+
+    // Remove the event listener when the modal closes
+    document.removeEventListener('keydown', modalCloseListener);
+
+    // Focus on the button with ID 'modalButton'
+    const GobacktoButton = document.getElementById('modalButton');
+    if (GobacktoButton) {
+        modalButton.focus();
+    }
+}   
+
+function modalClosesKey(event) {
+    switch (event.key) {
+        case 'Enter':
+            event.preventDefault(); // Prevent default behavior
+            modalCloses();  // Close modal on Enter
+            break;
+
+        case 'Escape':
+            event.preventDefault(); // Prevent default behavior
+            modalCloses();  // Close modal on Escape
+            break;
+
+        default:
+            // Optional: You can handle other keys here
+            break;
+    }
 }

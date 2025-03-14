@@ -15,79 +15,115 @@
   <!-- Custom styles for Empower Ability Labs -->
   <link rel="stylesheet" href="EmpowerAbilityLab.css">
 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/d0d6947446.js" crossorigin="anonymous"></script>
+
   <title>Empower Ability Labs</title>
 </head>
 
 <body>
 
-<!-- Nav Start -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-  <a class="navbar-brand" href="#">
-    <img class="logoImg" src="images/empowerabilitylabslogo.png" alt="Empower Ability Labs Logo">
-  </a>
+  <!-- Nav Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+    <a class="navbar-brand" href="#">
+      <img class="logoImg" src="images/empowerabilitylabslogo.png" alt="Empower Ability Labs Logo">
+    </a>
 
-  <!-- Burger Button for Mobile Menu -->
-  <button class="navbar-toggler" id="burgerIcon" onclick="burgerFunction()" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- Burger Button for Mobile Menu -->
+    <button class="navbar-toggler" id="burgerIcon" onclick="burgerFunction()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav roboto-500" id="navbar-nav-ul">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Schedule a call</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- Nav End -->
-
-<main>
-  <h1>
-    Welcome to Empower Ability Labs! 
-  </h1>
-  <p>
-    Empower Ability Labs is a hub for learning and empathy-building.  We are on a mission to foster understanding and promote inclusive digital experiences for all. We offer a range of services designed to promote accessibility awareness, drive inclusivity, and enhance the user experience. And help you find answers on How do people with disabilities use technology and navigate the digital world? What tools do they employ?
-  </p>
-
-<!-- Large modal start -->
-<button type="button" id='modalButton' class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Meet the Empower Community!</button>
-
-
-<div class="card customModal_container">
-  <div class="card-header">
-    Community Steering Committee 
-  </div>
-  <div class="card-body">
-      <p> We get an aha! moments from product managers who try our services for the first time. We offered many lab days, workshops and offered usability testing services to many companies and organizations including:</p>
-      <ul class="modalList">
-        <li>McGill University </li>
-        <li>Walmart.ca</li>
-        <li>Apple.ca</li>
-        <li>Google.ca</li>
-        <li>Government of Canada</li>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav roboto-500" id="navbar-nav-ul">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Schedule a call</a>
+        </li>
       </ul>
-  </div>
-</div>
+    </div>
+  </nav>
+  <!-- Nav End -->
+
+  <main>
+    <h1>
+      Welcome to Empower Ability Labs!
+    </h1>
+    <p>
+      Empower Ability Labs is a hub for learning and empathy-building. We are on a mission to foster understanding and
+      promote inclusive digital experiences for all. We offer a range of services designed to promote accessibility
+      awareness, drive inclusivity, and enhance the user experience. And help you find answers on How do people with
+      disabilities use technology and navigate the digital world? What tools do they employ?
+    </p>
+
+    <!-- Large modal start -->
+    <button type="button" id='modalButton' class="btn btn-primary" data-toggle="modal"
+      data-target=".bd-example-modal-lg">Meet the Empower Community!</button>
+
+    <div class="customOverlay" id="customOverlay">
+    </div>
+
+    <div class="card customModal_container" id="customModal_container">
+      <i class="fa-solid fa-circle-xmark" id="modalClose" tabindex="0"></i>
+      <div class="card-header">
+        Community Steering Committee
+      </div>
+      <div class="card-body">
+        <p> We get an aha! moments from product managers who try our services for the first time. We offered many lab
+          days, workshops and offered usability testing services to many companies and organizations including:</p>
+        <ul class="disableBootstrapUL">
+          <li>McGill University </li>
+          <li>Walmart.ca</li>
+          <li>Apple.ca</li>
+          <li>Google.ca</li>
+          <li>Government of Canada</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Large modal end -->
+
+    <div class="ownGrid">
+      <div>
+        <h3>Our Approach</h3>
+        <p>Empower Ability Labs utilizes a hands-on approach to raise awareness and promote empathy. Our immersive
+          workshops and lab days provide participants with a unique opportunity to step into the shoes of individuals
+          with disabilities and navigate the world from their perspective.</p>
+        <a href="https://www.google.com/search/howsearchworks/our-approach/" target="_blank" s>Learn more</a>
+      </div>
+      <div>
+        <h3>Services </h3>
+        <p>Promote accessibility awareness and enhance the user experience. </p>
+        <ul class="disableBootstrapUL">
+          <li>Empathy lab days and workshops</li>
+          <li>Go beyond WCAG compliance!</li>
+          <li>Inspirational speakers.</li>
+        </ul>
+        <a href="https://www.elevenways.be/en/services" target="_blank">Learn more</a>
+      </div>
+      <div>
+        <h3>Testimonials</h3>
+        <p>Invite a speaker with disabilities to share their unique journey. This captivating addition to your upcoming
+          event will offer insights that resonate, inspire, educate, and enrich your team’s understanding of inclusion.
+        </p>
+        <a href="https://dictionary.cambridge.org/us/dictionary/english/testimonial" target="_blank">Learn more</a>
+      </div>
+
+    </div>
 
 
 
-<!-- Large modal end -->
+  </main>
 
 
 
-</main>
-
-
-
-<footer role="contentinfo">
-  <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved. </p>
-</footer>
+  <footer role="contentinfo">
+    <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved. </p>
+  </footer>
 
 
 

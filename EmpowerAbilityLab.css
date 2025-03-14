@@ -52,7 +52,9 @@ table {
 /* Reset CSS End */
 
 /* Custom style start */
-
+html {
+    height: 100% !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .roboto-100 {
@@ -163,20 +165,75 @@ table {
 
 body {
     position: relative;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+.customOverlay {
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0 0 0 / 80%);
+    /* Add the blur effect */
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100% !important;
 }
 
 .customModal_container {
     position: absolute;
-    left: 0;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
-ul.modalList{
+/* disable bootstrap  */
+ul.disableBootstrapUL{
     list-style-type: disc !important;
     padding-left:1em !important;
     margin-left:1em !important;
 }
+
+.ownGrid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ownGrid > div {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    flex: 1; /* Ensures equal width for all columns */
+    min-height: 100%; /* Ensures equal height */
+    min-width: 300px;
+    border: 1px solid #000; /* Just for visualization */
+    padding: 20px;
+  }
+  
+  .ownGrid a {
+    margin-top: auto; /* Pushes the link to the bottom */
+  }
+
+  .customOverlay, 
+  .customModal_container {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .fa-solid.fa-circle-xmark {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: #dc3444;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  
 
 /* Custom style end */
 
