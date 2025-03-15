@@ -186,6 +186,44 @@ ul.disableBootstrapUL{
     color: #e0af3e;
   }
 
+  .sectionIntro p{
+    border-left: 5px solid #F5B335;
+    padding-left: 10px;
+  }
+
+  .scheduleCTA {
+    background-color: #f6c446;
+    border: 1px solid #f6c446;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .scheduleCTA:hover {
+    background-color: #e0af3e;
+    border: 1px solid #e0af3e;
+  }
+
+  .scheduleTextArea {
+    resize: none;
+    height: 150px;
+  }
+
+  .toggle-icons i {
+    font-size: 2.5em;
+  }
+
+  .toggle-icons > i:nth-child(1) {
+    display: block;
+    color: #dc3444;
+    cursor: pointer;
+  }
+
+  .toggle-icons > i:nth-child(2) {
+    display: none;
+    color: #28a745;
+    cursor: pointer;
+  }
+
 /* Custom style end */
 
 

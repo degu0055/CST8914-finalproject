@@ -208,3 +208,29 @@ document.getElementById('homeTab').addEventListener('click', () => toggleSection
 document.getElementById('sevicesTab').addEventListener('click', () => toggleSection('serviceSection'));
 document.getElementById('scheduleTab').addEventListener('click', () => toggleSection('scheduleSection'));
 
+document.getElementById('fa-toggle-off').addEventListener('click', () => receivedEmailToggle('turnOff'));
+document.getElementById('fa-toggle-on').addEventListener('click', () => receivedEmailToggle('turnOn'));
+
+    
+
+function receivedEmailToggle(action) {
+    let receivedEmailStatus = false;
+
+   if (action === 'turnOff') {
+        // alert('turn On');
+        document.getElementById('fa-toggle-off').style.display = 'none';
+        document.getElementById('fa-toggle-on').style.display = 'block';
+        receivedEmailStatus = true;
+
+   }
+
+   else if (action === 'turnOn') {
+        // alert('turn Off');
+        document.getElementById('fa-toggle-off').style.display = 'block';
+        document.getElementById('fa-toggle-on').style.display = 'none';
+        receivedEmailStatus = false;
+   }
+
+   alert(`Emails are ${receivedEmailStatus ? 'ON' : 'OFF'}`);
+
+}
