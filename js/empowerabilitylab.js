@@ -127,13 +127,14 @@ let modalCloseListener;  // Declare a variable to hold the event listener
 
 function modalShow() {
     // Show modal overlay and modal container
-    document.getElementById('customOverlay').style.display = 'block';
-    document.getElementById('customOverlay').style.opacity = '1';
-    document.getElementById('customOverlay').style.zIndex = '10';
+    // Get references to elements
+    const customOverlay = document.getElementById('customOverlay');
+    const customModalContainer = document.getElementById('customModal_container');
 
-    document.getElementById('customModal_container').style.display = 'block';
-    document.getElementById('customModal_container').style.opacity = '1';
-    document.getElementById('customModal_container').style.zIndex = '11';
+    // Apply styles
+    customOverlay.style.cssText = 'display: block; opacity: 1; z-index: 10;';
+    customModalContainer.style.cssText = 'display: block; opacity: 1; z-index: 11;';
+
 
     // Focus on the modal close button
     modalClose.focus();
