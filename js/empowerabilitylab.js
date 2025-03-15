@@ -237,37 +237,28 @@ function receivedEmailToggle(action) {
 
 
 function handleHashChange() {
-    let pageTitle = "Empower Ability Labs"; // Default title
-    let favicon = "/images/empowerabilitylabslogo.png"; // Default favicon
+    let pageTitle = "Home"; // Default title
 
     switch (window.location.hash) {
         case '#home':
             toggleSection('homeSection');
-            pageTitle = "Home | Empower Ability Labs";
+            pageTitle = "Home";
             favicon = "home-icon.png";
             break;
         case '#services':
             toggleSection('serviceSection');
-            pageTitle = "Services | Empower Ability Labs";
+            pageTitle = "Services";
             favicon = "services-icon.png";
             break;
         case '#schedule':
             toggleSection('scheduleSection');
-            pageTitle = "Schedule | Empower Ability Labs";
+            pageTitle = "Schedule a call";
             favicon = "schedule-icon.png";
             break;
     }
 
     document.title = pageTitle;
     
-    // Update favicon
-    let link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-        link = document.createElement("link");
-        link.rel = "icon";
-        document.head.appendChild(link);
-    }
-    link.href = favicon;
 }
 
 // Handle hash change when navigating
