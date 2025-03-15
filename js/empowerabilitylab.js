@@ -235,30 +235,32 @@ function receivedEmailToggle(action) {
 
 }
 
-
 function handleHashChange() {
     let pageTitle = "Home"; // Default title
+
+    // Reset all 'active' classes
+    const navItems = document.querySelectorAll('#navbar-nav-ul li');
+    navItems.forEach(item => item.classList.remove('active'));
 
     switch (window.location.hash) {
         case '#home':
             toggleSection('homeSection');
             pageTitle = "Home";
-            favicon = "home-icon.png";
+            document.querySelector('#navbar-nav-ul li:nth-child(1)').classList.add('active');
             break;
         case '#services':
             toggleSection('serviceSection');
             pageTitle = "Services";
-            favicon = "services-icon.png";
+            document.querySelector('#navbar-nav-ul li:nth-child(2)').classList.add('active');
             break;
         case '#schedule':
             toggleSection('scheduleSection');
             pageTitle = "Schedule a call";
-            favicon = "schedule-icon.png";
+            document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
             break;
     }
 
     document.title = pageTitle;
-    
 }
 
 // Handle hash change when navigating
@@ -266,5 +268,6 @@ window.addEventListener("hashchange", handleHashChange);
 
 // Handle hash change on page load (in case of refresh)
 window.addEventListener("load", handleHashChange);
+
 
 
