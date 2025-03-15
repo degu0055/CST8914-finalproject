@@ -235,7 +235,8 @@ function receivedEmailToggle(action) {
 
 }
 
-window.addEventListener("hashchange", function () {
+
+function handleHashChange() {
     switch (window.location.hash) {
         case '#home':
             toggleSection('homeSection');
@@ -247,4 +248,10 @@ window.addEventListener("hashchange", function () {
             toggleSection('scheduleSection');
             break;
     }
-});
+}
+
+// Handle hash change when navigating
+window.addEventListener("hashchange", handleHashChange);
+
+// Handle hash change on page load (in case of refresh)
+window.addEventListener("load", handleHashChange);
