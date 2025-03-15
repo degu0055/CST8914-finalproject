@@ -177,12 +177,13 @@ ul.disableBootstrapUL{
 
   .learnMore {
     color: #f6c446;
+    font-size: .9em;
     text-transform: uppercase;
     font-weight: bold;
   }
 
   .learnMore:hover {
-    color: #f6c446;
+    color: #e0af3e;
   }
 
 /* Custom style end */
