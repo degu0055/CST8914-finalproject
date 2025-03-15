@@ -115,7 +115,6 @@ navbarnavul.addEventListener('keydown', checkIfArrowDownPressed);
 // Listen for the focusout event to detect when focus leaves the navbar
 navbarnavul.addEventListener('focusout', handleFocusOut);
 
-
 // modal/lightbox
 const modalButton = document.getElementById('modalButton');
 modalButton.addEventListener('click', modalShow);
