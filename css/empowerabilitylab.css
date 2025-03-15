@@ -1,10 +1,19 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #202020;
+}
+
+p,
+.disableBootstrapUL li {
+  color: #777777;
+}
+
 /* Custom style start */
 html {
     height: 100% !important;
 }
 
 /* nav list item font size */
-.navbar-nav {
+.navbar-nav li{
     font-size: 1em;
 }
 
@@ -48,7 +57,19 @@ main {
 }
 
 .modalButton {
+  background-color: #f6c446;
+  border: 1px solid #f6c446;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25em;
+  padding: 10px 20px;
   margin: 24px 0 40px 0; /* lamang ng 16px yung bottom */
+}
+
+.modalButton:hover{
+  background-color: #e0af3e;
+  border: 1px solid #e0af3e;
+  color: white;
 }
 
 .customOverlay {
@@ -141,6 +162,27 @@ ul.disableBootstrapUL{
     max-width: 125px;
     min-width: 50px;
     height: auto;
+  }
+
+  footer {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #252932;
+    text-align: center;
+  }
+
+  footer p {
+    color: #FFFFFF;
+  }
+
+  .learnMore {
+    color: #f6c446;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .learnMore:hover {
+    color: #f6c446;
   }
 
 /* Custom style end */
