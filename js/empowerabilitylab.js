@@ -197,10 +197,12 @@ function modalClosesKey(event) {
 
 // Function to show the selected section and hide the others
 function toggleSection(activeSectionId) {
+
     const sections = ['homeSection', 'serviceSection', 'scheduleSection'];
     sections.forEach(section => {
         document.getElementById(section).style.display = (section === activeSectionId) ? 'block' : 'none';
     });
+
 }
 
 // Event listeners for each tab
@@ -217,7 +219,6 @@ function receivedEmailToggle(action) {
     let receivedEmailStatus = false;
 
    if (action === 'turnOff') {
-        // alert('turn On');
         document.getElementById('fa-toggle-off').style.display = 'none';
         document.getElementById('fa-toggle-on').style.display = 'block';
         receivedEmailStatus = true;
@@ -225,12 +226,25 @@ function receivedEmailToggle(action) {
    }
 
    else if (action === 'turnOn') {
-        // alert('turn Off');
         document.getElementById('fa-toggle-off').style.display = 'block';
         document.getElementById('fa-toggle-on').style.display = 'none';
         receivedEmailStatus = false;
    }
 
-   alert(`Emails are ${receivedEmailStatus ? 'ON' : 'OFF'}`);
+//    alert(`Emails are ${receivedEmailStatus ? 'ON' : 'OFF'}`);
 
 }
+
+window.addEventListener("hashchange", function () {
+    switch (window.location.hash) {
+        case '#home':
+            toggleSection('homeSection');
+            break;
+        case '#services':
+            toggleSection('serviceSection');
+            break;
+        case '#schedule':
+            toggleSection('scheduleSection');
+            break;
+    }
+});

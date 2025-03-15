@@ -224,6 +224,14 @@ ul.disableBootstrapUL{
     cursor: pointer;
   }
 
+  form {
+    max-width: 500px;
+  }
+
+  .form-check,
+  .form-check-input {
+    color: #777777;
+  }
 /* Custom style end */
 
 
