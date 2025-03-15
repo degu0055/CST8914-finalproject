@@ -1,145 +1,10 @@
-/* Reset CSS Start */
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Reset CSS End */
-
 /* Custom style start */
 html {
     height: 100% !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-.roboto-100 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-200 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-300 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-400 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-500 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-600 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-700 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-800 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
-
-.roboto-900 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-}
 
 /* nav list item font size */
-.navbar-nav.roboto-500 {
+.navbar-nav {
     font-size: 1em;
 }
 
@@ -168,11 +33,24 @@ body {
     height: 100% !important;
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 
 main {
     flex: 1;
 }
+
+.homeSection,
+.serviceSection,
+.scheduleSection {
+  padding: 4% 8% 8% 8%;
+  box-sizing: border-box;
+}
+
+.modalButton {
+  margin: 24px 0 40px 0; /* lamang ng 16px yung bottom */
+}
+
 .customOverlay {
     opacity: 0.8;
     position: absolute;
@@ -189,6 +67,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    min-width: 320px;
 }
 
 
@@ -202,6 +81,7 @@ ul.disableBootstrapUL{
 .ownGrid {
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
   }
   
   .ownGrid > div {
@@ -210,8 +90,8 @@ ul.disableBootstrapUL{
     flex: 1; /* Ensures equal width for all columns */
     min-height: 100%; /* Ensures equal height */
     min-width: 300px;
-    border: 1px solid #000; /* Just for visualization */
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
   }
   
   .ownGrid a {
@@ -234,6 +114,34 @@ ul.disableBootstrapUL{
     cursor: pointer;
   }
   
+  .serviceSection {
+    display: none;
+  }
+
+  .scheduleSection {
+    display: none;
+  }
+
+  .section_2col {
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .section_2col > :first-child{
+    flex: 4;
+  }
+
+  .section_2col > :nth-child(2){
+    flex: 1;
+    text-align: center;
+  }
+
+  .responsive_Icon {
+    width: 100%;
+    max-width: 125px;
+    min-width: 50px;
+    height: auto;
+  }
 
 /* Custom style end */
 

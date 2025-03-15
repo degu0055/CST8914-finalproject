@@ -194,3 +194,17 @@ function modalClosesKey(event) {
             break;
     }
 }
+
+// Function to show the selected section and hide the others
+function toggleSection(activeSectionId) {
+    const sections = ['homeSection', 'serviceSection', 'scheduleSection'];
+    sections.forEach(section => {
+        document.getElementById(section).style.display = (section === activeSectionId) ? 'block' : 'none';
+    });
+}
+
+// Event listeners for each tab
+document.getElementById('homeTab').addEventListener('click', () => toggleSection('homeSection'));
+document.getElementById('sevicesTab').addEventListener('click', () => toggleSection('serviceSection'));
+document.getElementById('scheduleTab').addEventListener('click', () => toggleSection('scheduleSection'));
+
