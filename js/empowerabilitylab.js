@@ -218,18 +218,20 @@ document.getElementById('fa-toggle-on').addEventListener('click', () => received
 function receivedEmailToggle(action) {
     let receivedEmailStatus = false;
 
-   if (action === 'turnOff') {
+    if (action === 'turnOff') {
         document.getElementById('fa-toggle-off').style.display = 'none';
         document.getElementById('fa-toggle-on').style.display = 'block';
         receivedEmailStatus = true;
-
-   }
-
-   else if (action === 'turnOn') {
+        document.getElementById('fa-toggle-on').focus();  // Focus on 'fa-toggle-on'
+    }
+    
+    else if (action === 'turnOn') {
         document.getElementById('fa-toggle-off').style.display = 'block';
         document.getElementById('fa-toggle-on').style.display = 'none';
         receivedEmailStatus = false;
-   }
+        document.getElementById('fa-toggle-off').focus();  // Focus on 'fa-toggle-off'
+    }
+    
 
 //    alert(`Emails are ${receivedEmailStatus ? 'ON' : 'OFF'}`);
 
@@ -392,3 +394,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial check in case any checkbox is pre-checked
   checkCheckboxes();
+
+  
