@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessage.style.display = "none";
         successMessage.style.display = "block";
         form.reset(); // Reset form on success
-        successMessage.setAttribute("tabindex", "-1"); // Make the success message focusable
+        successMessage.setAttribute("tabindex", "0"); // Make the success message focusable
         successMessage.focus(); // Focus on the success message
       } else {
         errorMessage.style.display = "block";
