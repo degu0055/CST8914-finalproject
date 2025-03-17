@@ -94,9 +94,10 @@ main {
 
 /* disable bootstrap  */
 ul.disableBootstrapUL{
-    list-style-type: disc !important;
+    list-style-type: disc;
     padding-left:1em !important;
     margin-left:1em !important;
+    margin-bottom: 0 !important;
 }
 
 .ownGrid {
@@ -232,6 +233,41 @@ ul.disableBootstrapUL{
   .form-check-input {
     color: #777777;
   }
+
+  .errorMessage {
+    background-color: #dc3444;
+    padding: 20px;
+    box-sizing: border-box;
+    /* max-width: 500px; */
+    margin: 0 0 20px 0;
+  }
+
+  .errorMessage > h5 {
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .errorMessage ul li {
+    color: #FFFFFF;
+  }
+
+  .successMessage {
+    background-color: #198753;
+    padding: 20px;
+    margin: 0 0 20px 0;
+    /* max-width: 500px; */
+    box-sizing: border-box;
+  }
+  
+  .successMessage > h6 {
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+  }
+
+
 /* Custom style end */
 
 

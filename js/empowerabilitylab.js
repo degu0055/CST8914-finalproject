@@ -253,11 +253,12 @@ function handleHashChange() {
             pageTitle = "Services";
             document.querySelector('#navbar-nav-ul li:nth-child(2)').classList.add('active');
             break;
-        case '#schedule':
-            toggleSection('scheduleSection');
-            pageTitle = "Schedule a call";
-            document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
-            break;
+            case '#schedule':
+                toggleSection('scheduleSection');
+                pageTitle = "Schedule a call";
+                document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
+                break;
+            
     }
 
     document.title = pageTitle;
@@ -269,5 +270,125 @@ window.addEventListener("hashchange", handleHashChange);
 // Handle hash change on page load (in case of refresh)
 window.addEventListener("load", handleHashChange);
 
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    const textAreaDiv = document.getElementById('textArea');
+  
+    function toggleTextArea() {
+      const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+      textAreaDiv.style.display = isChecked ? "block" : "none";
+    }
+  
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", toggleTextArea);
+    });
+  
+    // Initial check to hide the text area on page load
+    toggleTextArea();
+  });
 
+//   validation
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const errorMessage = document.getElementById("errorMessage");
+    const successMessage = document.createElement("div"); // Create success message element
+    successMessage.className = "successMessage";
+    successMessage.innerHTML = "<h6>Thank you for reaching out! We’ve received your request and will get back to you soon to schedule a call with our sales team.</h6>";
+    form.insertAdjacentElement("beforebegin", successMessage); // Insert it before the form
+    successMessage.style.display = "none"; // Hide initially
+  
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+  
+      let isValid = true;
+  
+      // Get form field values
+      const businessName = document.getElementById("businessName").value.trim();
+      const phoneNumber = document.getElementById("phoneNumber").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const topics = document.querySelectorAll("input[name='topic']:checked");
+      const textArea = document.getElementById("scheduleTextArea").value.trim();
+  
+      // Validation logic
+      document.getElementById("businessValidation").style.display = /^[a-zA-Z0-9\s]+$/.test(businessName) ? "none" : "block";
+      document.getElementById("phoneValidation").style.display = /^\d{3}-\d{3}-\d{4}$/.test(phoneNumber) ? "none" : "block";
+      document.getElementById("validation").style.display = /^[^@]+@[^@]+\.[^@]+$/.test(email) ? "none" : "block";
+      document.getElementById("topicValidation").style.display = topics.length > 0 ? "none" : "block";
+  
+      // Show message length validation only if a topic is selected
+      if (topics.length > 0) {
+        document.getElementById("textAreaValidation").style.display = textArea.length >= 10 && textArea.length <= 500 ? "none" : "block";
+      } else {
+        document.getElementById("textAreaValidation").style.display = "none"; // Hide if no topic is selected
+      }
+  
+      // Check if all fields are valid
+      if (
+        !/^[a-zA-Z0-9\s]+$/.test(businessName) ||
+        !/^\d{3}-\d{3}-\d{4}$/.test(phoneNumber) ||
+        !/^[^@]+@[^@]+\.[^@]+$/.test(email) ||
+        topics.length === 0 ||
+        (topics.length > 0 && (textArea.length < 10 || textArea.length > 500))
+      ) {
+        isValid = false;
+      }
+  
+      // Display the appropriate message
+      if (isValid) {
+        errorMessage.style.display = "none";
+        successMessage.style.display = "block";
+        form.reset(); // Reset form on success
+        successMessage.setAttribute("tabindex", "-1"); // Make the success message focusable
+        successMessage.focus(); // Focus on the success message
+      } else {
+        errorMessage.style.display = "block";
+        successMessage.style.display = "none";
+        errorMessage.focus(); // Focus on the error message
+      }
+      
+      
+    });
+  });
+  
+  window.onload = function() {
+    var errorMessage = document.querySelector('.errorMessage');
+    var successMessage = document.querySelector('.successMessage');
+    
+    if (errorMessage) {
+      errorMessage.style.display = 'none';
+      errorMessage.setAttribute('tabindex', '0');
+    }
+    if (successMessage) {
+      successMessage.style.display = 'none';
+      successMessage.setAttribute('tabindex', '0');
+    }
+  };
+  
+  
+  
+  // Function to check if at least one checkbox is checked
+  function checkCheckboxes() {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    const textArea = document.getElementById('textArea');
+    
+    // Check if any checkbox is checked
+    const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    
+    // If any checkbox is checked, display the textarea
+    textArea.style.display = anyChecked ? 'block' : 'none';
+  }
 
+  // Attach event listeners to all checkboxes
+  document.querySelectorAll('.form-check-input').forEach(checkbox => {
+    checkbox.addEventListener('change', checkCheckboxes); // Check on change of checkbox state
+    checkbox.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent form submission
+        this.checked = !this.checked; // Toggle checkbox state on Enter key press
+        checkCheckboxes(); // Check checkboxes after toggle
+      }
+    });
+  });
+
+  // Initial check in case any checkbox is pre-checked
+  checkCheckboxes();

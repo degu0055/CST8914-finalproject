@@ -187,7 +187,26 @@
 
       <!-- Validation/Succes here -->
 
-      <form action="your-server-endpoint" method="post">
+
+
+      <div class="errorMessage" id="errorMessage">
+        <h5>Some fields need attention:</h5>
+        <ul style="margin-bottom: 0; padding-left: 1.5em">
+          <li id="businessValidation">Business name must contain only letters, numbers, and spaces</li>
+          <li id="phoneValidation">Please enter a valid phone number</li>
+          <li id="validation">Please enter a valid email address</li>
+          <li id="topicValidation">Please select at least one topic of discussion</li>
+          <li id="textAreaValidation">Your message must be between 10 and 500 characters</li>
+        </ul>
+      </div>
+
+      <div class="successMessage" id="successMessage">
+        <h6>
+          Thank you for reaching out! We’ve received your request and will get back to you soon to schedule a call with our sales team.
+        </h6>
+      </div>
+
+      <form>
 
         <div class="form-group">
           <label for="businessName">Business Name:</label>
@@ -201,7 +220,7 @@
 
         <div class="form-group">
           <label for="email">Email (required):</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
         </div>
 
         <div class="form-group">
@@ -231,13 +250,13 @@
           </div>
         </div>
         
+        <div class="form-group textArea" id="textArea">
+          <label for="scheduleTextArea">Tell us about your event:</label>
+          <textarea class="form-control scheduleTextArea" id="scheduleTextArea" rows="3"></textarea>
+        </div>
 
-          <div class="form-group">
-            <label for="scheduleTextArea">Tell us about your event:</label>
-            <textarea class="form-control scheduleTextArea" id="scheduleTextArea" rows="3"></textarea>
-          </div>
-
-        <button class="btn btn-primary scheduleCTA" type="submit">Schedule a call</button>
+        <button class="btn btn-primary scheduleCTA" id="" type="submit">Schedule a call</button>
+        
       </form>
 
     </section>
