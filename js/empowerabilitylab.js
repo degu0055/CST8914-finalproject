@@ -245,6 +245,11 @@ function handleHashChange() {
     navItems.forEach(item => item.classList.remove('active'));
 
     switch (window.location.hash) {
+        case '':
+            toggleSection('homeSection');
+            pageTitle = "Home";
+            document.querySelector('#navbar-nav-ul li:nth-child(1)').classList.add('active');
+            break
         case '#home':
             toggleSection('homeSection');
             pageTitle = "Home";
@@ -255,11 +260,11 @@ function handleHashChange() {
             pageTitle = "Services";
             document.querySelector('#navbar-nav-ul li:nth-child(2)').classList.add('active');
             break;
-            case '#schedule':
-                toggleSection('scheduleSection');
-                pageTitle = "Schedule a call";
-                document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
-                break;
+        case '#schedule':
+            toggleSection('scheduleSection');
+            pageTitle = "Schedule a call";
+            document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
+            break;
             
     }
 
