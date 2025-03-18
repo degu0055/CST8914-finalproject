@@ -66,10 +66,11 @@ main {
   margin: 24px 0 40px 0; /* lamang ng 16px yung bottom */
 }
 
-.modalButton:hover{
-  background-color: #e0af3e;
-  border: 1px solid #e0af3e;
-  color: white;
+.modalButton:hover,
+.modalButton:active {
+  background-color: #e0af3e !important;
+  border: 1px solid #e0af3e !important;
+  color: white !important;
 }
 
 .customOverlay {
@@ -200,9 +201,10 @@ ul.disableBootstrapUL{
     font-weight: bold;
   }
 
-  .scheduleCTA:hover {
-    background-color: #e0af3e;
-    border: 1px solid #e0af3e;
+  .scheduleCTA:hover,
+  .scheduleCTA:active {
+    background-color: #e0af3e !important;
+    border: 1px solid #e0af3e !important;
   }
 
   .scheduleTextArea {
