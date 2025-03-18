@@ -31,50 +31,28 @@
     </a>
 
     <!-- Burger Button for Mobile Menu -->
-    <button class="navbar-toggler" id="burgerIcon" onclick="burgerFunction()" aria-label="Toggle navigation">
+    <button class="navbar-toggler" id="burgerIcon" onclick="burgerFunction()" aria-label="Toggle navigation" aria-expanded="false"> 
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav" id="navbar-nav-ul">
-        <li class="nav-item">
-          <a class="nav-link" id="homeTab" href="#home">Home <span class="sr-only">(current)</span></a>
+      <ul class="navbar-nav" id="navbar-nav-ul" role="menu">
+        <li class="nav-item" role="none">
+          <a class="nav-link" id="homeTab" href="#home" role="menuitem">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="sevicesTab" href="#services">Services</a>
+        <li class="nav-item" role="none">
+          <a class="nav-link" id="servicesTab" href="#services" role="menuitem">Services</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="scheduleTab" href="#schedule">Schedule a call</a>
+        <li class="nav-item" role="none">
+          <a class="nav-link" id="scheduleTab" href="#schedule" role="menuitem">Schedule a call</a>
         </li>
       </ul>
     </div>
+
   </nav>
   <!-- Nav End -->
 
   <main>
-
-    <!-- Large modal start -->
-    <div class="customOverlay" id="customOverlay">
-    </div>
-
-    <div class="card customModal_container" id="customModal_container">
-      <i class="fa-solid fa-circle-xmark" id="modalClose" tabindex="0"></i>
-      <div class="card-header">
-        Community Steering Committee
-      </div>
-      <div class="card-body">
-        <p> We get an aha! moments from product managers who try our services for the first time. We offered many lab
-          days, workshops and offered usability testing services to many companies and organizations including:</p>
-        <ul class="disableBootstrapUL">
-          <li>McGill University </li>
-          <li>Walmart.ca</li>
-          <li>Apple.ca</li>
-          <li>Google.ca</li>
-          <li>Government of Canada</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Large modal end -->
 
     <section class="homeSection" id="homeSection">
       <h1>
@@ -88,30 +66,71 @@
       </p>
 
 
-      <button type="button" id='modalButton' class="modalButton btn btn-primary" data-toggle="modal"
-        data-target=".bd-example-modal-lg">Meet the Empower Community!</button>
+      <!-- <button type="button" id='modalButton' class="modalButton btn btn-primary" data-toggle="modal"
+        data-target=".bd-example-modal-lg">Meet the Empower Community!</button> -->
+
+        <button type="button" id="modalButton" class="modalButton btn btn-primary" data-toggle="modal"
+  data-target=".bd-example-modal-lg" aria-haspopup="dialog" aria-controls="empowerCommunityModal">
+  Meet the Empower Community!
+</button>
+
+    <!-- Large modal start -->
+    <div class="customOverlay" id="customOverlay"></div>
+
+    <!-- Modal Container -->
+    <div class="card customModal_container" id="customModal_container" role="dialog" aria-labelledby="modalTitle" aria-hidden="true" tabindex="0">
+    
+      <i class="fa-solid fa-circle-xmark" id="modalClose" tabindex="1" role="button" aria-label="Close"></i>
+
+      <div class="card-header" id="modalTitle">
+        Community Steering Committee
+      </div>
+    
+      <div class="card-body">
+        <p>We get aha! moments from product managers who try our services for the first time. We offered many lab
+          days, workshops, and usability testing services to many companies and organizations, including:</p>
+        <ul class="disableBootstrapUL" id="goBacktoClose">
+          <li>McGill University</li>
+          <li>Walmart.ca</li>
+          <li>Apple.ca</li>
+          <li>Google.ca</li>
+          <li>Government of Canada</li>
+        </ul>
+      </div>
+
+
+
+
+    </div>
+    
+        <!-- Large modal end -->
+
+        
 
 
       <div class="ownGrid">
-        <div>
+
+        <article>
           <h4>Our Approach</h4>
           <p>Empower Ability Labs utilizes a hands-on approach to raise awareness and promote empathy. Our immersive
             workshops and lab days provide participants with a unique opportunity to step into the shoes of individuals
             with disabilities and navigate the world from their perspective.</p>
-          <a href="https://www.google.com/search/howsearchworks/our-approach/" class="learnMore" target="_blank" s>Learn
+          <a href="https://www.google.com/search/howsearchworks/our-approach/" class="learnMore" target="_blank" rel="noopener noreferrer">Learn
             more</a>
-        </div>
-        <div>
+        </article>
+
+        <article>
           <h4>Services </h4>
           <p>Promote accessibility awareness and enhance the user experience. </p>
-          <ul class="disableBootstrapUL">
-            <li>Empathy lab days and workshops</li>
-            <li>Go beyond WCAG compliance!</li>
-            <li>Inspirational speakers.</li>
+          <ul class="disableBootstrapUL" role="list">
+            <li role="listitem">Empathy lab days and workshops</li>
+            <li role="listitem">Go beyond WCAG compliance!</li>
+            <li role="listitem">Inspirational speakers.</li>
           </ul>
-          <a href="https://www.elevenways.be/en/services" class="learnMore" target="_blank">Learn more</a>
-        </div>
-        <div>
+          <a href="https://www.elevenways.be/en/services" class="learnMore" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
+
+        <article>
           <h4>Testimonials</h4>
           <p>Invite a speaker with disabilities to share their unique journey. This captivating addition to your
             upcoming
@@ -119,18 +138,18 @@
             inclusion.
           </p>
           <a href="https://dictionary.cambridge.org/us/dictionary/english/testimonial" class="learnMore"
-            target="_blank">Learn more</a>
-        </div>
+            target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
 
       </div>
       
     </section>
 
-    <section class="serviceSection" id="serviceSection">
+    <section class="serviceSection" id="serviceSection" role="region" aria-labelledby="serviceSectionTitle">
 
       <div class="section_2col">
 
-        <div class="sectionIntro">
+        <div class="sectionIntro" role="banner">
           <p>
             Dedicated space or programs designed to cultivate empathy and understanding among individuals towards the
             challenges faced by people with disabilities in using technology and interacting with various environments.
@@ -170,13 +189,11 @@
     <section class="scheduleSection" id="scheduleSection">
       <div class="section_2col">
 
-        <div class="sectionIntro">
-          <p>
+        <div class="sectionIntro" role="banner">
           <p>
             At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through
             immersive experiences. Fill out the form below and we’ll get back to you as soon as we can to schedule a
             call with our sales team!
-          </p>
           </p>
         </div>
 
@@ -190,8 +207,8 @@
 
 
 
-      <div class="errorMessage" id="errorMessage">
-        <h5>Some fields need attention:</h5>
+      <div class="errorMessage" id="errorMessage" role="alert" aria-live="assertive" aria-labelledby="errorHeading">
+        <h5 id="errorHeading">Some fields need attention:</h5>
         <ul style="margin-bottom: 0; padding-left: 1.5em">
           <li id="businessValidation">Business name must contain only letters, numbers, and spaces</li>
           <li id="phoneValidation">Please enter a valid phone number</li>
@@ -200,12 +217,13 @@
           <li id="textAreaValidation">Your message must be between 10 and 500 characters</li>
         </ul>
       </div>
-
-      <div class="successMessage" id="successMessage">
-        <h6>
+      
+      <div class="successMessage" id="successMessage" role="status" aria-live="polite" aria-labelledby="successHeading">
+        <h6 id="successHeading">
           Thank you for reaching out! We’ve received your request and will get back to you soon to schedule a call with our sales team.
         </h6>
       </div>
+      
 
       <form>
 
@@ -245,14 +263,19 @@
 
         <div class="form-group">
           <label for="ReceveilEmail">Receive emails about updates and services</label>
-          <div class="toggle-icons">
-            <a href="#" id="fa-toggle-off">
-            <i class="fa-solid fa-toggle-off" style="color: red;"></i>
-          </a>
-          <a href="#" id="fa-toggle-on" style="display: none;">
-            <i class="fa-solid fa-toggle-on " style="color: green;"></i>
-          </a>
+
+          <div class="toggle-icons" id="toggle-icons">
+
+            <div id="fa-toggle-off" tabindex="0" role="button">
+              <i class="fa-solid fa-toggle-off"></i>
+            </div>
+
+            <div id="fa-toggle-on" style="display: none;" tabindex="0" role="button">
+              <i class="fa-solid fa-toggle-on "></i>
+            </div>
+
           </div>
+
         </div>
         
         <div class="form-group textArea" id="textArea">

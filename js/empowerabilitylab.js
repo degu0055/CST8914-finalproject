@@ -137,6 +137,7 @@ function modalShow() {
 
 
     // Focus on the modal close button
+    // customModal_container.focus();
     modalClose.focus();
 
     // Create the keydown event listener
@@ -207,13 +208,26 @@ function toggleSection(activeSectionId) {
 
 // Event listeners for each tab
 document.getElementById('homeTab').addEventListener('click', () => toggleSection('homeSection'));
-document.getElementById('sevicesTab').addEventListener('click', () => toggleSection('serviceSection'));
+document.getElementById('servicesTab').addEventListener('click', () => toggleSection('serviceSection'));
 document.getElementById('scheduleTab').addEventListener('click', () => toggleSection('scheduleSection'));
 
 document.getElementById('fa-toggle-off').addEventListener('click', () => receivedEmailToggle('turnOff'));
 document.getElementById('fa-toggle-on').addEventListener('click', () => receivedEmailToggle('turnOn'));
 
-    
+
+
+document.getElementById('fa-toggle-off').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        receivedEmailToggle('turnOff');
+    }
+});
+
+document.getElementById('fa-toggle-on').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        receivedEmailToggle('turnOn');
+    }
+});
+
 
 function receivedEmailToggle(action) {
     let receivedEmailStatus = false;
@@ -232,10 +246,10 @@ function receivedEmailToggle(action) {
         document.getElementById('fa-toggle-off').focus();  // Focus on 'fa-toggle-off'
     }
     
-
 //    alert(`Emails are ${receivedEmailStatus ? 'ON' : 'OFF'}`);
-
 }
+
+
 
 function handleHashChange() {
     let pageTitle = "Home"; // Default title
@@ -401,3 +415,12 @@ document.addEventListener("DOMContentLoaded", function () {
   checkCheckboxes();
 
   
+// Focus on goBacktoClose
+document.getElementById("goBacktoClose").focus();
+
+// Listen for when the goBacktoClose element is focused
+document.getElementById("goBacktoClose").addEventListener("focus", function() {
+    // After focusing goBacktoClose, set focus to modalClose
+    document.getElementById("modalClose").focus();
+});
+
