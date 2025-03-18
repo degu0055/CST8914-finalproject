@@ -147,9 +147,9 @@
 
     <section class="serviceSection" id="serviceSection" role="region" aria-labelledby="serviceSectionTitle">
 
-      <div class="section_2col">
+      <div class="section_2col" role="banner">
 
-        <div class="sectionIntro" role="banner">
+        <div class="sectionIntro">
           <p>
             Dedicated space or programs designed to cultivate empathy and understanding among individuals towards the
             challenges faced by people with disabilities in using technology and interacting with various environments.
@@ -187,7 +187,7 @@
     </section>
 
     <section class="scheduleSection" id="scheduleSection">
-      <div class="section_2col">
+      <div class="section_2col" role="banner">
 
         <div class="sectionIntro" role="banner">
           <p>
@@ -229,22 +229,25 @@
 
         <div class="form-group">
           <label for="businessName">Business Name:</label>
-          <input type="text" class="form-control" id="businessName" placeholder="Enter your business name">
+          <input type="text" class="form-control" id="businessName" placeholder="Enter your business name" aria-label="Business Name" aria-required="true">
         </div>
+        
 
         <div class="form-group">
           <label for="phoneNumber">Phone number:</label>
-          <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number (613-123-1234)">
+          <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number (613-123-1234)" aria-label="Phone number" aria-required="true" pattern="\d{3}[\-]\d{3}[\-]\d{4}" />
         </div>
+        
 
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" aria-label="Email address" aria-required="true">
         </div>
+        
 
-        <div class="form-group">
-          <label for="topic">What would you like to talk about:</label><br>
-          
+        <fieldset class="form-group">
+          <legend>What would you like to talk about:</legend>
+        
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="awareness" name="topic" value="Awareness lab days and workshops">
             <label class="form-check-label" for="awareness">Awareness lab days and workshops</label>
@@ -259,31 +262,35 @@
             <input class="form-check-input" type="checkbox" id="usability" name="topic" value="Usability testing">
             <label class="form-check-label" for="usability">Usability testing</label>
           </div>
-        </div>
+        </fieldset>
+        
 
         <div class="form-group">
           <label for="ReceveilEmail">Receive emails about updates and services</label>
-
-          <div class="toggle-icons" id="toggle-icons">
-
-            <div id="fa-toggle-off" tabindex="0" role="button">
+        
+          <div class="toggle-icons" id="toggle-icons" role="group" aria-labelledby="toggle-group-label">
+            
+            <!-- Off state -->
+            <div id="fa-toggle-off" tabindex="0" role="button" aria-pressed="false" aria-label="Turn on to receive emails about updates and services">
               <i class="fa-solid fa-toggle-off"></i>
             </div>
-
-            <div id="fa-toggle-on" style="display: none;" tabindex="0" role="button">
-              <i class="fa-solid fa-toggle-on "></i>
+        
+            <!-- On state -->
+            <div id="fa-toggle-on" style="display: none;" tabindex="0" role="button" aria-pressed="true" aria-label="Turn off to stop receiving emails about updates and services">
+              <i class="fa-solid fa-toggle-on"></i>
             </div>
-
+        
           </div>
-
         </div>
+        
         
         <div class="form-group textArea" id="textArea">
           <label for="scheduleTextArea">Tell us about your event:</label>
-          <textarea class="form-control scheduleTextArea" id="scheduleTextArea" rows="3"></textarea>
+          <textarea class="form-control scheduleTextArea" id="scheduleTextArea" rows="3" aria-label="Event details" aria-required="true"></textarea>
         </div>
+        
+        <button class="btn btn-primary scheduleCTA" id="scheduleCallButton" type="submit" aria-label="Schedule a call to discuss your event">Schedule a call</button>
 
-        <button class="btn btn-primary scheduleCTA" id="" type="submit">Schedule a call</button>
         
       </form>
 
