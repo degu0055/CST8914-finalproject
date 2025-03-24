@@ -424,3 +424,21 @@ document.getElementById("goBacktoClose").addEventListener("focus", function() {
     document.getElementById("modalClose").focus();
 });
 
+// Test this:
+
+
+window.addEventListener('popstate', function(event) {
+    console.log('Back or Forward button was used');
+
+    // Get the current URL hash
+    const hash = window.location.hash;
+
+    // Check the URL hash and apply focus accordingly
+    if (hash.includes('#home')) {
+        document.getElementById('homeTab').focus();
+    } else if (hash.includes('#services')) {
+        document.getElementById('servicesTab').focus();
+    } else if (hash.includes('#schedule')) {
+        document.getElementById('scheduleTab').focus();
+    }
+});

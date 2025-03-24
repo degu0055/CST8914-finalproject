@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p,
 .disableBootstrapUL li {
-  color: #777777;
+  color: #676767;
 }
 
 /* Custom style start */
@@ -57,10 +57,14 @@ main {
 }
 
 .modalButton {
-  background-color: #f6c446;
-  border: 1px solid #f6c446;
+  /* color: #202020;
+  background-color: #f5b334;
+  border: 1px solid #f5b334; */
+  color: #f5b334;
+  background-color: #202020;
+  border: 1px solid #202020;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.25em;
   padding: 10px 20px;
   margin: 24px 0 40px 0; /* lamang ng 16px yung bottom */
@@ -68,8 +72,8 @@ main {
 
 .modalButton:hover,
 .modalButton:active {
-  background-color: #e0af3e !important;
-  border: 1px solid #e0af3e !important;
+  background-color: #252932 !important;
+  border: 1px solid #252932 !important;
   color: white !important;
 }
 
@@ -105,7 +109,7 @@ ul.disableBootstrapUL{
 .ownGrid {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
   }
   
   .ownGrid > article {
@@ -149,6 +153,7 @@ ul.disableBootstrapUL{
   .section_2col {
     display: flex;
     box-sizing: border-box;
+    /* padding: 0 0 40px 0; */
   }
 
   .section_2col > :first-child{
@@ -175,36 +180,38 @@ ul.disableBootstrapUL{
   }
 
   footer p {
-    color: #FFFFFF;
+    color: #F5B335;
   }
 
   .learnMore {
-    color: #f6c446;
+    color: #202020;
     font-size: .9em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   .learnMore:hover {
-    color: #e0af3e;
+    color: #202020;
   }
 
-  .sectionIntro p{
+  /* .sectionIntro p{
     border-left: 5px solid #F5B335;
     padding-left: 10px;
-  }
+  } */
 
   .scheduleCTA {
-    background-color: #f6c446;
-    border: 1px solid #f6c446;
+    color: #f5b334;
+    background-color: #202020;
+    border: 1px solid #202020;
     text-transform: uppercase;
     font-weight: bold;
   }
 
   .scheduleCTA:hover,
   .scheduleCTA:active {
-    background-color: #e0af3e !important;
-    border: 1px solid #e0af3e !important;
+    background-color: #252932 !important;
+    border: 1px solid #252932 !important;
+    color: white !important;
   }
 
   .scheduleTextArea {
@@ -232,9 +239,10 @@ ul.disableBootstrapUL{
     max-width: 500px;
   }
 
-  .form-check,
-  .form-check-input {
-    color: #777777;
+  legend,
+    .form-check,
+    .form-check-input{
+    color: #676767;
   }
 
   .errorMessage {
@@ -274,6 +282,23 @@ ul.disableBootstrapUL{
     font-size: 1em;
   }
 
+  [role="menuitem"] {
+    color: #5c5c5d !important;
+  }
+  
+  label {
+    color: #676767;
+  }
+
+  article {
+    border: 1px solid #F5B335;
+    padding: 20px !important;
+    box-sizing: border-box;
+  }
+
+  h2{
+    font-size: 1.5em;
+  }
 
 /* Custom style end */
 
