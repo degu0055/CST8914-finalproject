@@ -204,7 +204,7 @@ ul.disableBootstrapUL{
     background-color: #202020;
     border: 1px solid #202020;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   .scheduleCTA:hover,
@@ -294,6 +294,7 @@ ul.disableBootstrapUL{
     border: 1px solid #F5B335;
     padding: 20px !important;
     box-sizing: border-box;
+    border-radius: 10px;
   }
 
   h2{
