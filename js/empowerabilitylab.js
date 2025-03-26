@@ -263,24 +263,28 @@ function handleHashChange() {
             toggleSection('homeSection');
             pageTitle = "Home";
             document.querySelector('#navbar-nav-ul li:nth-child(1)').classList.add('active');
-            break
+            history.pushState(null, pageTitle, '#home');
+            break;
         case '#home':
             toggleSection('homeSection');
             pageTitle = "Home";
             document.querySelector('#navbar-nav-ul li:nth-child(1)').classList.add('active');
+            history.pushState(null, pageTitle, '#home');
             break;
         case '#services':
             toggleSection('serviceSection');
             pageTitle = "Services";
             document.querySelector('#navbar-nav-ul li:nth-child(2)').classList.add('active');
+            history.pushState(null, pageTitle, '#services');
             break;
         case '#schedule':
             toggleSection('scheduleSection');
             pageTitle = "Schedule a call";
             document.querySelector('#navbar-nav-ul li:nth-child(3)').classList.add('active');
+            history.pushState(null, pageTitle, '#schedule');
             break;
-            
     }
+    
 
     document.title = pageTitle;
 }
